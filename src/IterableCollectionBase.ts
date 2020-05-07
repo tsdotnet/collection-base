@@ -9,7 +9,7 @@ import copyIterableTo from './copyIterableTo';
 
 export default abstract class IterableCollectionBase<T>
 {
-	protected _version: number = 0; // Provides an easy means of tracking changes and invalidating enumerables.
+	private _version: number = 0; // Provides an easy means of tracking changes and invalidating enumerables.
 
 	/**
 	 * The version number used to track changes.
@@ -69,7 +69,7 @@ export default abstract class IterableCollectionBase<T>
 	 * Returns the number of items contained in the collection by iterating the contents.
 	 * @returns {number}
 	 */
-	protected getCount (): number
+	getCount (): number
 	{
 		let count = 0;
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -80,6 +80,10 @@ export default abstract class IterableCollectionBase<T>
 		return count;
 	}
 
+	/**
+	 * Increments the internal version.
+	 * @private
+	 */
 	protected _incrementVersion (): void
 	{
 		++this._version;

@@ -66,6 +66,10 @@ class IterableCollectionBase {
         }
         return count;
     }
+    /**
+     * Increments the internal version.
+     * @private
+     */
     _incrementVersion() {
         ++this._version;
     }

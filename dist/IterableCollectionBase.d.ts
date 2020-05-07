@@ -4,7 +4,7 @@
  */
 import { ArrayLikeWritable } from '@tsdotnet/common-interfaces';
 export default abstract class IterableCollectionBase<T> {
-    protected _version: number;
+    private _version;
     /**
      * The version number used to track changes.
      * @returns {number}
@@ -33,7 +33,11 @@ export default abstract class IterableCollectionBase<T> {
      * Returns the number of items contained in the collection by iterating the contents.
      * @returns {number}
      */
-    protected getCount(): number;
+    getCount(): number;
+    /**
+     * Increments the internal version.
+     * @private
+     */
     protected _incrementVersion(): void;
     /**
      * Override to define the actual iterator.
