@@ -1,6 +1,6 @@
 {
   "name": "@tsdotnet/collection-base",
-  "version": "0.1.0-alpha",
+  "version": "1.0.0",
   "description": "",
   "author": "electricessence",
   "license": "MIT",
@@ -50,8 +50,6 @@
   },
   "dependencies": {
     "@tsdotnet/common-interfaces": "^1.0.2",
-    "@tsdotnet/compare": "^1.0.12",
-    "@tsdotnet/exceptions": "^1.0.12",
-    "@tsdotnet/linked-node-list": "^1.0.2"
+    "@tsdotnet/exceptions": "^1.0.12"
   }
 }
