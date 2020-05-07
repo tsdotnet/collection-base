@@ -4,13 +4,7 @@
  */
 import { ArrayLikeWritable } from '@tsdotnet/common-interfaces';
 export default abstract class IterableCollectionBase<T> {
-    /**
-     * Returns the number of items contained in the collection by iterating the contents.
-     * @returns {number}
-     */
-    protected getCount(): number;
     protected _version: number;
-    protected _incrementVersion(): void;
     /**
      * The version number used to track changes.
      * @returns {number}
@@ -22,13 +16,6 @@ export default abstract class IterableCollectionBase<T> {
      * @returns {boolean}
      */
     assertVersion(version: number): true | never;
-    /**
-     * Override to define the actual iterator.
-     * The [Symbol.iterator] should not be overridden as it handles version tracking.
-     * @returns {Iterator}
-     * @private
-     */
-    protected abstract _getIterator(): Iterator<T>;
     [Symbol.iterator](): Iterator<T>;
     /**
      * Copies all values to a numerically indexable object.
@@ -42,4 +29,17 @@ export default abstract class IterableCollectionBase<T> {
      * @returns {[]}
      */
     toArray(): T[];
+    /**
+     * Returns the number of items contained in the collection by iterating the contents.
+     * @returns {number}
+     */
+    protected getCount(): number;
+    protected _incrementVersion(): void;
+    /**
+     * Override to define the actual iterator.
+     * The [Symbol.iterator] should not be overridden as it handles version tracking.
+     * @returns {Iterator}
+     * @private
+     */
+    protected abstract _getIterator(): Iterator<T>;
 }

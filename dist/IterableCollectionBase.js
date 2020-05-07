@@ -12,21 +12,6 @@ class IterableCollectionBase {
         this._version = 0; // Provides an easy means of tracking changes and invalidating enumerables.
     }
     /**
-     * Returns the number of items contained in the collection by iterating the contents.
-     * @returns {number}
-     */
-    getCount() {
-        let count = 0;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        for (const _ of this) {
-            count++;
-        }
-        return count;
-    }
-    _incrementVersion() {
-        ++this._version;
-    }
-    /**
      * The version number used to track changes.
      * @returns {number}
      */
@@ -68,6 +53,21 @@ class IterableCollectionBase {
      */
     toArray() {
         return this.copyTo([]);
+    }
+    /**
+     * Returns the number of items contained in the collection by iterating the contents.
+     * @returns {number}
+     */
+    getCount() {
+        let count = 0;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        for (const _ of this) {
+            count++;
+        }
+        return count;
+    }
+    _incrementVersion() {
+        ++this._version;
     }
 }
 exports.default = IterableCollectionBase;
