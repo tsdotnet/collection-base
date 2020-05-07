@@ -1,14 +1,9 @@
-/*!
+/*
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-
+import copyIterableTo from './copyIterableTo';
 import IterableCollectionBase from './IterableCollectionBase';
-
-export default interface ReadOnlyCollection<T>
-	extends IterableCollectionBase<T>
-{
-	count: number;
-
-	contains (entry: T): boolean;
-}
+export { copyIterableTo };
+export default IterableCollectionBase;
+//# sourceMappingURL=index.js.map
