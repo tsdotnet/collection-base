@@ -6,5 +6,6 @@ obj
 /spec
 /src
 /docs
+/archive
 typedoc.json
 tsconfig.*

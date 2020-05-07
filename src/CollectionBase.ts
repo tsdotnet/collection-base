@@ -1,95 +1,27 @@
-/*!
+/*
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
+ * Licensing: MIT
  */
 
-import {forEach} from './Enumeration/Enumerator';
-import {areEqual} from '../Compare';
-import ArgumentNullException from '../Exceptions/ArgumentNullException';
-import InvalidOperationException from '../Exceptions/InvalidOperationException';
-import DisposableBase from '../Disposable/DisposableBase';
-import ICollection from './ICollection';
-import {FiniteIEnumerator} from './Enumeration/IEnumerator';
-import IEnumerateEach from './Enumeration/IEnumerateEach';
-import {ActionWithIndex, EqualityComparison, PredicateWithIndex} from '../FunctionTypes';
-import ArrayLikeWritable from './Array/ArrayLikeWritable';
-import FiniteEnumerableOrEnumerator from './Enumeration/FiniteEnumerableOrEnumerator';
+import Collection from './Collection';
+import {areEqual, EqualityComparison} from '@tsdotnet/compare';
+import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
+import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
+import Predicate from './Predicate';
 
-//noinspection SpellCheckingInspection
-const
-	NAME = 'CollectionBase',
-	CMDC = 'Cannot modify a disposed collection.',
-	CMRO = 'Cannot modify a read-only collection.';
-const
-	LINQ_PATH = '../../System.Linq/Linq';
+/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
 
 export abstract class CollectionBase<T>
-	extends DisposableBase
-	implements ICollection<T>, IEnumerateEach<T>
+	extends ReadOnlyCollectionBase<T>
+	implements Collection<T>
 {
 
-	protected _version: number; // Provides an easy means of tracking changes and invalidating enumerables.
-	/*
-	 * Note: Avoid changing modified count by any means but ++;
-	 * If setting modified count by the result of a closure it may be a negative number or NaN and ruin the pattern.
-	 */
-	private _modifiedCount: number;
-	private _updateRecursion: number;
-
 	protected constructor (
-		source?: FiniteEnumerableOrEnumerator<T>,
-		protected _equalityComparer: EqualityComparison<T> = areEqual)
+		source?: Iterable<T>,
+		equalityComparer: EqualityComparison<T> = areEqual)
 	{
-		super(NAME);
+		super(equalityComparer);
 		this._importEntries(source);
-		this._updateRecursion = 0;
-		this._modifiedCount = 0;
-		this._version = 0;
-	}
-
-	// noinspection JSMethodCanBeStatic
-	get isEndless (): false { return false; }
-
-	get count (): number
-	{
-		return this.getCount();
-	}
-
-	get isReadOnly (): boolean
-	{
-		return this.getIsReadOnly();
-	}
-
-	get isUpdating (): boolean { return this._updateRecursion!=0; }
-
-	/**
-	 * Takes a closure that if returning true will propagate an update signal.
-	 * Multiple update operations can be occurring at once or recursively and the onModified signal will only occur once they're done.
-	 * @param closure
-	 * @returns {boolean}
-	 */
-	handleUpdate (closure?: () => boolean): boolean
-	{
-		if(!closure) return false;
-		const _ = this;
-		_.assertModifiable();
-		_._updateRecursion++;
-		let updated: boolean = false;
-
-		try
-		{
-			updated = closure();
-			if(updated)
-				_._modifiedCount++;
-		}
-		finally
-		{
-			_._updateRecursion--;
-		}
-
-		_._signalModification();
-
-		return updated;
 	}
 
 	/**
@@ -98,18 +30,8 @@ export abstract class CollectionBase<T>
 	 */
 	add (entry: T): this
 	{
-		const _ = this;
-		_.assertModifiable();
-		_._updateRecursion++;
-
-		try
-		{ if(_._addInternal(entry)) _._modifiedCount++; }
-		finally
-		{ _._updateRecursion--; }
-
-		_._signalModification();
-
-		return _;
+		if(this._addInternal(entry)) this._version++;
+		return this;
 	}
 
 	/**
@@ -121,20 +43,8 @@ export abstract class CollectionBase<T>
 	 */
 	remove (entry: T, max: number = Infinity): number
 	{
-		const _ = this;
-		_.assertModifiable();
-		_._updateRecursion++;
-
-		let n: number = NaN;
-		try
-		{
-			n = _._removeInternal(entry, max);
-			if(n) _._modifiedCount++;
-		}
-		finally
-		{ _._updateRecursion--; }
-
-		_._signalModification();
+		const n = this._removeInternal(entry, max);
+		if(n) this._version++;
 		return n;
 	}
 
@@ -144,240 +54,40 @@ export abstract class CollectionBase<T>
 	 */
 	clear (): number
 	{
-		const _ = this;
-		_.assertModifiable();
-		_._updateRecursion++;
-
-		let n: number = NaN;
-		try
-		{
-			n = _._clearInternal();
-			if(n) _._modifiedCount++;
-		}
-		finally
-		{ _._updateRecursion--; }
-
-		_._signalModification();
-
+		const n = this._clearInternal();
+		if(n) this._version++;
 		return n;
 	}
 
 	/**
-	 * Safely imports any array enumerator, or enumerable.
+	 * Safely imports the contents of an iterable.
 	 * @param entries
 	 * @returns {number}
 	 */
-	importEntries (entries: FiniteEnumerableOrEnumerator<T>): number
+	importEntries (entries: Iterable<T>): number
 	{
-		const _ = this;
 		if(!entries) return 0;
-		_.assertModifiable();
-		_._updateRecursion++;
-
-		let n: number = NaN;
-		try
-		{
-			n = _._importEntries(entries);
-			if(n) _._modifiedCount++;
-		}
-		finally
-		{ _._updateRecursion--; }
-
-		_._signalModification();
+		const n = this._importEntries(entries);
+		if(n) this._version++;
 		return n;
 	}
 
 	/**
-	 * Returns a enumerator for this collection.
-	 */
-	abstract getEnumerator (): FiniteIEnumerator<T>;
-
-	/**
-	 * Returns an array filtered by the provided predicate.
-	 * Provided for similarity to JS Array.
+	 * Returns an iterable filtered by the provided predicate.
 	 * @param predicate
 	 * @returns {[]}
 	 */
-	filter (predicate: PredicateWithIndex<T>): T[]
+	* filter (predicate: Predicate<T>): Iterable<T>
 	{
 		if(!predicate) throw new ArgumentNullException('predicate');
-		let count = !this.getCount();
-		let result: T[] = [];
-		if(count)
+		let i = 0;
+		for(const e of this)
 		{
-			this.forEach((e, i) => {
-				if(predicate(e, i))
-					result.push(e);
-			});
-		}
-		return result;
-	}
-
-	/**
-	 * Returns true the first time predicate returns true.  Otherwise false.
-	 * Useful for searching through a collection.
-	 * @param predicate
-	 * @returns {any}
-	 */
-	any (predicate?: PredicateWithIndex<T>): boolean
-	{
-		let count = this.getCount();
-		if(!count) return false;
-		if(!predicate) return Boolean(count);
-
-		let found: boolean = false;
-		this.forEach((e, i) => !(found = predicate(e, i)));
-		return found;
-	}
-
-	/**
-	 * Returns true the first time predicate returns true.  Otherwise false.
-	 * See '.any(predicate)'.  As this method is just just included to have similarity with a JS Array.
-	 * @param predicate
-	 * @returns {any}
-	 */
-	some (predicate?: PredicateWithIndex<T>): boolean
-	{
-		return this.any(predicate);
-	}
-
-	/*
-	 * Note: for a slight amount more code, we avoid creating functions/closures.
-	 * Calling handleUpdate is the correct pattern, but if possible avoid creating another function scope.
-	 */
-
-	/**
-	 * Returns true if the equality comparer resolves true on any element in the collection.
-	 * @param entry
-	 * @returns {boolean}
-	 */
-	contains (entry: T): boolean
-	{
-		const equals = this._equalityComparer;
-		return this.any(e => equals(entry, e));
-	}
-
-	/**
-	 * Special implementation of 'forEach': If the action returns 'false' the enumeration will stop.
-	 * @param action
-	 * @param useCopy
-	 */
-	forEach (action: ActionWithIndex<T>, useCopy?: boolean): number
-
-	forEach (action: PredicateWithIndex<T>, useCopy?: boolean): number
-
-	forEach (action: ActionWithIndex<T> | PredicateWithIndex<T>, useCopy?: boolean): number
-	{
-		if(this.wasDisposed)
-			return 0;
-
-		if(useCopy)
-		{
-			const a = this.toArray();
-			try
-			{
-				return forEach(a, action);
-			}
-			finally
-			{
-				a.length = 0;
-			}
-		}
-		else
-		{
-			return forEach(this.getEnumerator(), action);
+			if(predicate(e, i++))
+				yield e;
 		}
 	}
 
-	/**
-	 * Copies all values to numerically indexable object.
-	 * @param target
-	 * @param index
-	 * @returns {TTarget}
-	 */
-	copyTo<TTarget extends ArrayLikeWritable<T>> (
-		target: TTarget,
-		index: number = 0): TTarget
-	{
-		if(!target) throw new ArgumentNullException('target');
-
-		const count = this.getCount();
-		if(count)
-		{
-			const newLength = count + index;
-			if(target.length<newLength) target.length = newLength;
-
-			const e = this.getEnumerator();
-			while(e.moveNext()) // Disposes when finished.
-			{
-				target[index++] = <any>e.current;
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * Returns an array of the collection contents.
-	 * @returns {any[]|Array}
-	 */
-	toArray (): T[]
-	{
-		const count = this.getCount();
-		return count
-			? this.copyTo(count>65536 ? new Array<T>(count) : [])
-			: [];
-	}
-
-	protected abstract getCount (): number;
-
-	protected getIsReadOnly (): boolean
-	{
-		return false;
-	}
-
-	// Fundamentally the most important part of the collection.
-
-	protected assertModifiable (): true | never
-	{
-		this.throwIfDisposed(CMDC);
-		if(this.getIsReadOnly())
-			throw new InvalidOperationException(CMRO);
-		return true;
-	}
-
-	protected assertVersion (version: number): true | never
-	{
-		if(version!==this._version)
-			throw new InvalidOperationException('Collection was modified.');
-
-		return true;
-	}
-
-	protected _onModified (): void {}
-
-	protected _signalModification (increment?: boolean): boolean
-	{
-		const _ = this;
-		if(increment) _._modifiedCount++;
-		if(_._modifiedCount && !this._updateRecursion)
-		{
-			_._modifiedCount = 0;
-			_._version++;
-			try
-			{
-				_._onModified();
-			}
-			catch(ex)
-			{
-				// Avoid fatal errors which may have been caused by consumer.
-				console.error(ex);
-			}
-			return true;
-		}
-		return false;
-	}
-
-	protected _incrementModified (): void { this._modifiedCount++; }
 
 	protected abstract _addInternal (entry: T): boolean;
 
@@ -385,33 +95,19 @@ export abstract class CollectionBase<T>
 
 	protected abstract _clearInternal (): number;
 
-	protected _onDispose (): void
+	public dispose (): void
 	{
-		super._onDispose();
-		this._clearInternal();
-		this._version = 0;
-		this._updateRecursion = 0;
-		this._modifiedCount = 0;
+		this.clear();
 	}
 
-	protected _importEntries (entries: FiniteEnumerableOrEnumerator<T> | null | undefined): number
+	protected _importEntries (entries: Iterable<T> | null | undefined): number
 	{
 		let added = 0;
 		if(entries)
 		{
-			if((entries) instanceof (Array))
+			for(const e of entries)
 			{
-				// Optimize for avoiding a new closure.
-				for(let e of entries)
-				{
-					if(this._addInternal(e)) added++;
-				}
-			}
-			else
-			{
-				forEach(entries, e => {
-					if(this._addInternal(e)) added++;
-				});
+				if(this._addInternal(e)) added++;
 			}
 		}
 		return added;

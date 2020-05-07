@@ -1,21 +1,20 @@
-/*!
+/*
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
+ * Licensing: MIT
  */
 
-import ArgumentNullException from '../Exceptions/ArgumentNullException';
 import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
-import {FiniteIEnumerator} from './Enumeration/IEnumerator';
-import {from as enumeratorFrom} from './Enumeration/Enumerator';
-import Type from '../Types';
 import ReadOnlyCollection from './ReadOnlyCollection';
+import type from '@tsdotnet/compare/dist/type';
+import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
+import iterateArrayLike from './iterateArrayLike';
 
 
 export default class ReadOnlyCollectionWrapper<T>
 	extends ReadOnlyCollectionBase<T>
 {
-	private __getCount: () => number;
-	private __getEnumerator: () => FiniteIEnumerator<T>;
+	private readonly __getCount: () => number;
+	private readonly __getIterator: () => Iterator<T>;
 
 	constructor (collection: ReadOnlyCollection<T> | ArrayLike<T>)
 	{
@@ -24,37 +23,26 @@ export default class ReadOnlyCollectionWrapper<T>
 		if(!collection)
 			throw new ArgumentNullException('collection');
 
-		// Attempting to avoid contact with the original collection.
-		if(Type.isArrayLike(collection))
+		if(type.isArrayLike(collection))
 		{
 			this.__getCount = () => collection.length;
-			this.__getEnumerator = () => enumeratorFrom(collection);
+			this.__getIterator = iterateArrayLike(collection)[Symbol.iterator];
 		}
 		else
 		{
 			this.__getCount = () => collection.count;
-			this.__getEnumerator = () => collection.getEnumerator();
+			this.__getIterator = collection[Symbol.iterator];
 		}
-
 	}
 
 	protected _getCount (): number
 	{
-		this.throwIfDisposed();
 		return this.__getCount();
 	}
 
-	protected _getEnumerator (): FiniteIEnumerator<T>
+	protected _getIterator (): Iterator<T>
 	{
-		this.throwIfDisposed();
-		return this.__getEnumerator();
-	}
-
-	protected _onDispose ()
-	{
-		super._onDispose();
-		this.__getCount = <any>null;
-		this.__getEnumerator = <any>null;
+		return this.__getIterator();
 	}
 
 }

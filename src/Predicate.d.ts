@@ -1,11 +1,9 @@
-﻿/*
+/*
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
 
-export default interface ArrayLikeWritable<T>
+export default interface Predicate<T>
 {
-	length: number;
-
-	[n: number]: T;
+	(e: T, i: number): boolean;
 }
