@@ -4,7 +4,7 @@ import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 import Collection from './Collection';
 export default abstract class CollectionBase<T> extends ReadOnlyCollectionBase<T> implements Collection<T> {
     private _count;
-    protected constructor(initialValues?: Iterable<T>, equalityComparer?: EqualityComparison<T>);
+    protected constructor(equalityComparer?: EqualityComparison<T>);
     /**
      * Returns the current number of entries.
      * @returns {number}

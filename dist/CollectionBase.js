@@ -10,11 +10,9 @@ const ReadOnlyCollectionBase_1 = tslib_1.__importDefault(require("./ReadOnlyColl
 const ArgumentNullException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/ArgumentNullException"));
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
 class CollectionBase extends ReadOnlyCollectionBase_1.default {
-    constructor(initialValues, equalityComparer = compare_1.areEqual) {
+    constructor(equalityComparer = compare_1.areEqual) {
         super(equalityComparer);
         this._count = 0;
-        if (initialValues)
-            this.addEntries(initialValues);
     }
     /**
      * Returns the current number of entries.

@@ -8,6 +8,7 @@ const tslib_1 = require("tslib");
 const exceptions_1 = require("@tsdotnet/exceptions");
 const copyIterableTo_1 = tslib_1.__importDefault(require("./copyIterableTo"));
 class IterableCollectionBase {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     constructor() {
         this._version = 0; // Provides an easy means of tracking changes and invalidating enumerables.
     }

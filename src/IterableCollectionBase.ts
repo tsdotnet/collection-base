@@ -11,6 +11,9 @@ export default abstract class IterableCollectionBase<T>
 {
 	private _version: number = 0; // Provides an easy means of tracking changes and invalidating enumerables.
 
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
+	protected constructor () { /* make protected */ }
+
 	/**
 	 * The version number used to track changes.
 	 * @returns {number}

@@ -5,6 +5,7 @@
 import { ArrayLikeWritable } from '@tsdotnet/common-interfaces';
 export default abstract class IterableCollectionBase<T> {
     private _version;
+    protected constructor();
     /**
      * The version number used to track changes.
      * @returns {number}

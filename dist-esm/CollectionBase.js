@@ -7,11 +7,9 @@ import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
 export default class CollectionBase extends ReadOnlyCollectionBase {
-    constructor(initialValues, equalityComparer = areEqual) {
+    constructor(equalityComparer = areEqual) {
         super(equalityComparer);
         this._count = 0;
-        if (initialValues)
-            this.addEntries(initialValues);
     }
     /**
      * Returns the current number of entries.

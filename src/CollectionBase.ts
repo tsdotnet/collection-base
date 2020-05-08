@@ -17,12 +17,9 @@ export default abstract class CollectionBase<T>
 {
 	private _count: number = 0;
 
-	protected constructor (
-		initialValues?: Iterable<T>,
-		equalityComparer: EqualityComparison<T> = areEqual)
+	protected constructor (equalityComparer: EqualityComparison<T> = areEqual)
 	{
 		super(equalityComparer);
-		if(initialValues) this.addEntries(initialValues);
 	}
 
 	/**
