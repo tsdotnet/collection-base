@@ -6,7 +6,7 @@
 import Collection from './Collection';
 import ReadOnlyList from './ReadOnlyList';
 
-export default interface List<T>
+export default interface IndexedCollection<T>
 	extends Collection<T>, ReadOnlyList<T>
 {
 	set (index: number, value: T): boolean;

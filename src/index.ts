@@ -8,14 +8,14 @@ import IterableCollectionBase from './IterableCollectionBase';
 import ReadOnlyCollection from './ReadOnlyCollection';
 import Collection from './Collection';
 import ReadOnlyList from './ReadOnlyList';
-import List from './List';
+import IndexedCollection from './IndexedCollection';
 
 export {
 	copyIterableTo,
 	ReadOnlyCollection,
 	Collection,
 	ReadOnlyList,
-	List
+	IndexedCollection
 };
 
 export default IterableCollectionBase;
