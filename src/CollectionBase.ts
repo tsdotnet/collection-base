@@ -43,7 +43,7 @@ export default abstract class CollectionBase<T>
 		if(this._addInternal(entry))
 		{
 			this._count++;
-			this._incrementVersion();
+			this.incrementVersion();
 		}
 		return this;
 	}
@@ -61,7 +61,7 @@ export default abstract class CollectionBase<T>
 		if(n)
 		{
 			this._count -= n;
-			this._incrementVersion();
+			this.incrementVersion();
 		}
 		return n;
 	}
@@ -73,7 +73,7 @@ export default abstract class CollectionBase<T>
 	clear (): number
 	{
 		const n = this._clearInternal();
-		if(n) this._incrementVersion();
+		if(n) this.incrementVersion();
 		this._count = 0;
 		return n;
 	}
@@ -90,7 +90,7 @@ export default abstract class CollectionBase<T>
 		if(n)
 		{
 			this._count += n;
-			this._incrementVersion();
+			this.incrementVersion();
 		}
 		return n;
 	}

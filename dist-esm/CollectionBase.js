@@ -27,7 +27,7 @@ export default class CollectionBase extends ReadOnlyCollectionBase {
     add(entry) {
         if (this._addInternal(entry)) {
             this._count++;
-            this._incrementVersion();
+            this.incrementVersion();
         }
         return this;
     }
@@ -42,7 +42,7 @@ export default class CollectionBase extends ReadOnlyCollectionBase {
         const n = this._removeInternal(entry, max);
         if (n) {
             this._count -= n;
-            this._incrementVersion();
+            this.incrementVersion();
         }
         return n;
     }
@@ -53,7 +53,7 @@ export default class CollectionBase extends ReadOnlyCollectionBase {
     clear() {
         const n = this._clearInternal();
         if (n)
-            this._incrementVersion();
+            this.incrementVersion();
         this._count = 0;
         return n;
     }
@@ -68,7 +68,7 @@ export default class CollectionBase extends ReadOnlyCollectionBase {
         const n = this._addEntries(entries);
         if (n) {
             this._count += n;
-            this._incrementVersion();
+            this.incrementVersion();
         }
         return n;
     }

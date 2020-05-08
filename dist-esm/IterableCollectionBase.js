@@ -64,11 +64,12 @@ export default class IterableCollectionBase {
         return count;
     }
     /**
-     * Increments the internal version.
-     * @private
+     * Increments the collection version.
+     * Useful for tracking changes.
+     * @return {number} The new version.
      */
-    _incrementVersion() {
-        ++this._version;
+    incrementVersion() {
+        return ++this._version;
     }
 }
 //# sourceMappingURL=IterableCollectionBase.js.map

@@ -35,10 +35,11 @@ export default abstract class IterableCollectionBase<T> {
      */
     getCount(): number;
     /**
-     * Increments the internal version.
-     * @private
+     * Increments the collection version.
+     * Useful for tracking changes.
+     * @return {number} The new version.
      */
-    protected _incrementVersion(): void;
+    incrementVersion(): number;
     /**
      * Override to define the actual iterator.
      * The [Symbol.iterator] should not be overridden as it handles version tracking.

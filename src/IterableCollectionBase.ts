@@ -81,12 +81,13 @@ export default abstract class IterableCollectionBase<T>
 	}
 
 	/**
-	 * Increments the internal version.
-	 * @private
+	 * Increments the collection version.
+	 * Useful for tracking changes.
+	 * @return {number} The new version.
 	 */
-	protected _incrementVersion (): void
+	incrementVersion (): number
 	{
-		++this._version;
+		return ++this._version;
 	}
 
 	/**
