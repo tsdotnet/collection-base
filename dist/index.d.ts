@@ -7,5 +7,5 @@ import ReadOnlyList from './ReadOnlyList';
 import IndexedCollection from './IndexedCollection';
 import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 import CollectionBase from './CollectionBase';
-export { copyIterableTo, arrayLikeIterable, indexIterable, ReadOnlyCollection, Collection, ReadOnlyList, IndexedCollection, ReadOnlyCollectionBase, CollectionBase, };
+export { copyIterableTo, arrayLikeIterable, indexIterable, ReadOnlyCollection, Collection, ReadOnlyList, IndexedCollection, ReadOnlyCollectionBase, CollectionBase };
 export default IterableCollectionBase;
