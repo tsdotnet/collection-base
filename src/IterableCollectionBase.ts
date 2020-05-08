@@ -37,7 +37,7 @@ export default abstract class IterableCollectionBase<T>
 
 	* [Symbol.iterator] (): Iterator<T>
 	{
-		const version = this._version;
+		const version = this.version; // since version can be overridden, be sure to use public.
 		const i = this._getIterator();
 		let n = i.next();
 		while(!n.done)
