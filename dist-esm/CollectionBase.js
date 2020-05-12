@@ -2,9 +2,9 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { areEqual } from '@tsdotnet/compare';
-import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
+import areEqual from '@tsdotnet/compare/dist/areEqual';
 import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
+import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
 export default class CollectionBase extends ReadOnlyCollectionBase {
     constructor(equalityComparer = areEqual) {

@@ -3,15 +3,15 @@
  * Licensing: MIT
  */
 
-import copyIterableTo from './copyIterableTo';
 import arrayLikeIterable, {indexIterable} from './arrayLikeIterable';
+import Collection from './Collection';
+import CollectionBase from './CollectionBase';
+import copyIterableTo from './copyIterableTo';
+import IndexedCollection from './IndexedCollection';
 import IterableCollectionBase from './IterableCollectionBase';
 import ReadOnlyCollection from './ReadOnlyCollection';
-import Collection from './Collection';
-import ReadOnlyList from './ReadOnlyList';
-import IndexedCollection from './IndexedCollection';
 import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
-import CollectionBase from './CollectionBase';
+import ReadOnlyList from './ReadOnlyList';
 
 export {
 	copyIterableTo,

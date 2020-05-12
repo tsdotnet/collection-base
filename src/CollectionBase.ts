@@ -4,10 +4,11 @@
  */
 
 import {PredicateWithIndex} from '@tsdotnet/common-interfaces';
-import {areEqual, EqualityComparison} from '@tsdotnet/compare';
-import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
+import areEqual from '@tsdotnet/compare/dist/areEqual';
+import {EqualityComparison} from '@tsdotnet/compare/dist/Comparable';
 import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
 import Collection from './Collection';
+import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
 

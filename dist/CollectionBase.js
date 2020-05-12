@@ -5,12 +5,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const compare_1 = require("@tsdotnet/compare");
-const ReadOnlyCollectionBase_1 = tslib_1.__importDefault(require("./ReadOnlyCollectionBase"));
+const areEqual_1 = tslib_1.__importDefault(require("@tsdotnet/compare/dist/areEqual"));
 const ArgumentNullException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/ArgumentNullException"));
+const ReadOnlyCollectionBase_1 = tslib_1.__importDefault(require("./ReadOnlyCollectionBase"));
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
 class CollectionBase extends ReadOnlyCollectionBase_1.default {
-    constructor(equalityComparer = compare_1.areEqual) {
+    constructor(equalityComparer = areEqual_1.default) {
         super(equalityComparer);
         this._count = 0;
     }

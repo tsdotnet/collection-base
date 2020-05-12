@@ -3,9 +3,10 @@
  * Licensing: MIT
  */
 
-import {areEqual, EqualityComparison} from '@tsdotnet/compare';
-import ReadOnlyCollection from './ReadOnlyCollection';
+import areEqual from '@tsdotnet/compare/dist/areEqual';
+import {EqualityComparison} from '@tsdotnet/compare/dist/Comparable';
 import IterableCollectionBase from './IterableCollectionBase';
+import ReadOnlyCollection from './ReadOnlyCollection';
 
 export default abstract class ReadOnlyCollectionBase<T>
 	extends IterableCollectionBase<T>

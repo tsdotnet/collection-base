@@ -5,7 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const exceptions_1 = require("@tsdotnet/exceptions");
+const InvalidOperationException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/InvalidOperationException"));
 const copyIterableTo_1 = tslib_1.__importDefault(require("./copyIterableTo"));
 class IterableCollectionBase {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -26,7 +26,7 @@ class IterableCollectionBase {
      */
     assertVersion(version) {
         if (version !== this._version)
-            throw new exceptions_1.InvalidOperationException('Version mismatch. The collection was modified.');
+            throw new InvalidOperationException_1.default('Version mismatch. The collection was modified.');
         return true;
     }
     *[Symbol.iterator]() {

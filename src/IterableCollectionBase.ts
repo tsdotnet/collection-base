@@ -4,15 +4,15 @@
  */
 
 import {ArrayLikeWritable} from '@tsdotnet/common-interfaces';
-import {InvalidOperationException} from '@tsdotnet/exceptions';
+import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
 import copyIterableTo from './copyIterableTo';
 
 export default abstract class IterableCollectionBase<T>
 {
-	private _version: number = 0; // Provides an easy means of tracking changes and invalidating enumerables.
-
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	protected constructor () { /* make protected */ }
+
+	private _version: number = 0; // Provides an easy means of tracking changes and invalidating enumerables.
 
 	/**
 	 * The version number used to track changes.

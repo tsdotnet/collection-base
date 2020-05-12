@@ -5,10 +5,10 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const compare_1 = require("@tsdotnet/compare");
+const areEqual_1 = tslib_1.__importDefault(require("@tsdotnet/compare/dist/areEqual"));
 const IterableCollectionBase_1 = tslib_1.__importDefault(require("./IterableCollectionBase"));
 class ReadOnlyCollectionBase extends IterableCollectionBase_1.default {
-    constructor(_equalityComparer = compare_1.areEqual) {
+    constructor(_equalityComparer = areEqual_1.default) {
         super();
         this._equalityComparer = _equalityComparer;
     }

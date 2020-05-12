@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { InvalidOperationException } from '@tsdotnet/exceptions';
+import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
 import copyIterableTo from './copyIterableTo';
 export default class IterableCollectionBase {
     // eslint-disable-next-line @typescript-eslint/no-empty-function

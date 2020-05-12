@@ -1,7 +1,7 @@
 import { PredicateWithIndex } from '@tsdotnet/common-interfaces';
-import { EqualityComparison } from '@tsdotnet/compare';
-import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
+import { EqualityComparison } from '@tsdotnet/compare/dist/Comparable';
 import Collection from './Collection';
+import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 export default abstract class CollectionBase<T> extends ReadOnlyCollectionBase<T> implements Collection<T> {
     private _count;
     protected constructor(equalityComparer?: EqualityComparison<T>);

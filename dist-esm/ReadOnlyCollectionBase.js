@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-import { areEqual } from '@tsdotnet/compare';
+import areEqual from '@tsdotnet/compare/dist/areEqual';
 import IterableCollectionBase from './IterableCollectionBase';
 export default class ReadOnlyCollectionBase extends IterableCollectionBase {
     constructor(_equalityComparer = areEqual) {
