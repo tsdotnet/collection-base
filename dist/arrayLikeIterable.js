@@ -4,6 +4,7 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.indexIterable = void 0;
 function arrayLikeIterable(source) {
     if (source instanceof Array)
         return source;
