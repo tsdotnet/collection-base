@@ -1,6 +1,17 @@
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
+/*!
+ * @author electricessence / https://github.com/electricessence/
+ * @license MIT
+ */
 import { EqualityComparison } from '@tsdotnet/compare/dist/Comparable';
 import IterableCollectionBase from './IterableCollectionBase';
 import ReadOnlyCollection from './ReadOnlyCollection';
+/**
+ * Base class for implementing an internally modifiable, eternally read-only collection.
+ */
 export default abstract class ReadOnlyCollectionBase<T> extends IterableCollectionBase<T> implements ReadOnlyCollection<T> {
     protected _equalityComparer: EqualityComparison<T>;
     protected constructor(_equalityComparer?: EqualityComparison<T>);

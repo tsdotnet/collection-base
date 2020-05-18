@@ -1,12 +1,20 @@
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
 /*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
-import copyIterableTo from './copyIterableTo';
-export default class IterableCollectionBase {
+import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase';
+/**
+ * Base class for implementing an iterable (finite) collection.
+ */
+export default class IterableCollectionBase extends ReadOnlyIterableCollectionBase {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     constructor() {
+        super();
         this._version = 0; // Provides an easy means of tracking changes and invalidating enumerables.
     }
     /**
@@ -35,34 +43,6 @@ export default class IterableCollectionBase {
             this.assertVersion(version);
             n = i.next();
         }
-    }
-    /**
-     * Copies all values to a numerically indexable object.
-     * @param {TTarget} target
-     * @param {number} index
-     * @returns {TTarget}
-     */
-    copyTo(target, index = 0) {
-        return copyIterableTo(this, target, index);
-    }
-    /**
-     * Creates a copy of the contents as an array.
-     * @returns {[]}
-     */
-    toArray() {
-        return this.copyTo([]);
-    }
-    /**
-     * Returns the number of items contained in the collection by iterating the contents.
-     * @returns {number}
-     */
-    getCount() {
-        let count = 0;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        for (const _ of this) {
-            count++;
-        }
-        return count;
     }
     /**
      * Increments the collection version.

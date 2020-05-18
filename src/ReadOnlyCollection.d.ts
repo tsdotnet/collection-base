@@ -1,10 +1,17 @@
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
 /*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 
 import IterableCollectionBase from './IterableCollectionBase';
 
+/**
+ * Interface for implementing a finite read-only collection.
+ */
 export default interface ReadOnlyCollection<T>
 	extends IterableCollectionBase<T>
 {

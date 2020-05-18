@@ -1,9 +1,16 @@
-/*
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
+/*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 import areEqual from '@tsdotnet/compare/dist/areEqual';
 import IterableCollectionBase from './IterableCollectionBase';
+/**
+ * Base class for implementing an internally modifiable, eternally read-only collection.
+ */
 export default class ReadOnlyCollectionBase extends IterableCollectionBase {
     constructor(_equalityComparer = areEqual) {
         super();

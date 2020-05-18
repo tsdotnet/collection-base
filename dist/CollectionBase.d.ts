@@ -1,7 +1,17 @@
-import { PredicateWithIndex } from '@tsdotnet/common-interfaces';
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
+/*!
+ * @author electricessence / https://github.com/electricessence/
+ * @license MIT
+ */
 import { EqualityComparison } from '@tsdotnet/compare/dist/Comparable';
 import Collection from './Collection';
 import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
+/**
+ * Base class for implementing an externally modifiable collection.
+ */
 export default abstract class CollectionBase<T> extends ReadOnlyCollectionBase<T> implements Collection<T> {
     private _count;
     protected constructor(equalityComparer?: EqualityComparison<T>);
@@ -35,11 +45,9 @@ export default abstract class CollectionBase<T> extends ReadOnlyCollectionBase<T
      */
     addEntries(entries: Iterable<T>): number;
     /**
-     * Returns an iterable filtered by the provided predicate.
-     * @param predicate
-     * @returns {[]}
+     * Clears the collection.
+     * Provided for compatibility with disposal routines.
      */
-    filter(predicate: PredicateWithIndex<T>): Iterable<T>;
     dispose(): void;
     protected abstract _addInternal(entry: T): boolean;
     protected abstract _removeInternal(entry: T, max?: number): number;

@@ -1,11 +1,16 @@
-/*
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
+/*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 import areEqual from '@tsdotnet/compare/dist/areEqual';
-import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
 import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
+/**
+ * Base class for implementing an externally modifiable collection.
+ */
 export default class CollectionBase extends ReadOnlyCollectionBase {
     constructor(equalityComparer = areEqual) {
         super(equalityComparer);
@@ -71,19 +76,9 @@ export default class CollectionBase extends ReadOnlyCollectionBase {
         return n;
     }
     /**
-     * Returns an iterable filtered by the provided predicate.
-     * @param predicate
-     * @returns {[]}
+     * Clears the collection.
+     * Provided for compatibility with disposal routines.
      */
-    *filter(predicate) {
-        if (!predicate)
-            throw new ArgumentNullException('predicate');
-        let i = 0;
-        for (const e of this) {
-            if (predicate(e, i++))
-                yield e;
-        }
-    }
     dispose() {
         this.clear();
     }

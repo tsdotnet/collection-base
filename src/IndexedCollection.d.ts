@@ -1,11 +1,18 @@
-﻿/*!
+﻿/**
+ * @packageDocumentation
+ * @module collection-base
+ */
+/*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 
 import Collection from './Collection';
 import ReadOnlyList from './ReadOnlyList';
 
+/**
+ * Interface for implementing an indexable collection.
+ */
 export default interface IndexedCollection<T>
 	extends Collection<T>, ReadOnlyList<T>
 {

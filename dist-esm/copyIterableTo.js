@@ -1,6 +1,10 @@
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
 /*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
 /**

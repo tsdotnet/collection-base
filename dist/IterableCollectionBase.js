@@ -1,15 +1,23 @@
 "use strict";
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
 /*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const InvalidOperationException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/InvalidOperationException"));
-const copyIterableTo_1 = tslib_1.__importDefault(require("./copyIterableTo"));
-class IterableCollectionBase {
+const ReadOnlyIterableCollectionBase_1 = tslib_1.__importDefault(require("./ReadOnlyIterableCollectionBase"));
+/**
+ * Base class for implementing an iterable (finite) collection.
+ */
+class IterableCollectionBase extends ReadOnlyIterableCollectionBase_1.default {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     constructor() {
+        super();
         this._version = 0; // Provides an easy means of tracking changes and invalidating enumerables.
     }
     /**
@@ -38,34 +46,6 @@ class IterableCollectionBase {
             this.assertVersion(version);
             n = i.next();
         }
-    }
-    /**
-     * Copies all values to a numerically indexable object.
-     * @param {TTarget} target
-     * @param {number} index
-     * @returns {TTarget}
-     */
-    copyTo(target, index = 0) {
-        return copyIterableTo_1.default(this, target, index);
-    }
-    /**
-     * Creates a copy of the contents as an array.
-     * @returns {[]}
-     */
-    toArray() {
-        return this.copyTo([]);
-    }
-    /**
-     * Returns the number of items contained in the collection by iterating the contents.
-     * @returns {number}
-     */
-    getCount() {
-        let count = 0;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        for (const _ of this) {
-            count++;
-        }
-        return count;
     }
     /**
      * Increments the collection version.

@@ -1,17 +1,20 @@
-/*
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
+/*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 
-import {PredicateWithIndex} from '@tsdotnet/common-interfaces';
 import areEqual from '@tsdotnet/compare/dist/areEqual';
 import {EqualityComparison} from '@tsdotnet/compare/dist/Comparable';
-import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
 import Collection from './Collection';
 import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-this-alias */
-
+/**
+ * Base class for implementing an externally modifiable collection.
+ */
 export default abstract class CollectionBase<T>
 	extends ReadOnlyCollectionBase<T>
 	implements Collection<T>
@@ -94,22 +97,10 @@ export default abstract class CollectionBase<T>
 	}
 
 	/**
-	 * Returns an iterable filtered by the provided predicate.
-	 * @param predicate
-	 * @returns {[]}
+	 * Clears the collection.
+	 * Provided for compatibility with disposal routines.
 	 */
-	* filter (predicate: PredicateWithIndex<T>): Iterable<T>
-	{
-		if(!predicate) throw new ArgumentNullException('predicate');
-		let i = 0;
-		for(const e of this)
-		{
-			if(predicate(e, i++))
-				yield e;
-		}
-	}
-
-	public dispose (): void
+	dispose (): void
 	{
 		this.clear();
 	}

@@ -1,21 +1,21 @@
-/*
+/**
+ * @packageDocumentation
+ * @module collection-base
+ */
+/*!
  * @author electricessence / https://github.com/electricessence/
- * Licensing: MIT
+ * @license MIT
  */
 
+import indexIterable from './indexIterable';
+
+/**
+ * Ensures an iterable from an `ArrayLike` object.
+ * If is an instance of an Array, will return the array directly.
+ * @param {ArrayLike<T>} source
+ * @return {Iterable<T>}
+ */
 export default function arrayLikeIterable<T> (source: ArrayLike<T>): Iterable<T> {
 	if(source instanceof Array) return source;
 	return indexIterable(source);
-}
-
-export function* indexIterable<T> (source: ArrayLike<T>): Iterable<T>
-{
-	const len = source?.length;
-	if(len)
-	{
-		for(let i = 0; i<len; i++)
-		{
-			yield source[i];
-		}
-	}
 }
