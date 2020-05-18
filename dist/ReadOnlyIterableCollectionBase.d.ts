@@ -65,11 +65,11 @@ export default abstract class ReadOnlyIterableCollectionBase<T> extends Iterable
 export declare class ExtendedIterable<T> extends ReadOnlyIterableCollectionBase<T> {
     private _source;
     protected constructor(_source: Iterable<T>);
-    protected _getIterator(): Iterator<T>;
     /**
      * Creates an ExtendedIterable wrapper for the provided source.
      * @param {Iterable<T>} source
      * @return {ExtendedIterable<T>}
      */
     static create<T>(source: Iterable<T>): ExtendedIterable<T>;
+    protected _getIterator(): Iterator<T>;
 }

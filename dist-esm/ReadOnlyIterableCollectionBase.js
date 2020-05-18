@@ -112,9 +112,6 @@ export class ExtendedIterable extends ReadOnlyIterableCollectionBase {
         super();
         this._source = _source;
     }
-    _getIterator() {
-        return this._source[Symbol.iterator]();
-    }
     /**
      * Creates an ExtendedIterable wrapper for the provided source.
      * @param {Iterable<T>} source
@@ -122,6 +119,9 @@ export class ExtendedIterable extends ReadOnlyIterableCollectionBase {
      */
     static create(source) {
         return new ExtendedIterable(source);
+    }
+    _getIterator() {
+        return this._source[Symbol.iterator]();
     }
 }
 //# sourceMappingURL=ReadOnlyIterableCollectionBase.js.map
