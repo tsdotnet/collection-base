@@ -14,7 +14,7 @@
  */
 export default function indexIterable<T> (source: ArrayLike<T>): Iterable<T> {
 	return {
-		* [Symbol.iterator] ()
+		* [Symbol.iterator] (): Iterator<T>
 		{
 			const len = source?.length;
 			if(len)

@@ -157,7 +157,7 @@ export class ExtendedIterable<T>
 	 * @param {Iterable<T>} source
 	 * @return {ExtendedIterable<T>}
 	 */
-	static create<T> (source: Iterable<T>)
+	static create<T> (source: Iterable<T>): ExtendedIterable<T>
 	{
 		return new ExtendedIterable<T>(source);
 	}
