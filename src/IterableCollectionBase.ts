@@ -22,7 +22,9 @@ export default abstract class IterableCollectionBase<T>
 		super();
 	}
 
-	private _version: number = 0; // Provides an easy means of tracking changes and invalidating enumerables.
+	// Provides an easy means of tracking changes and invalidating enumerables.
+	// Leave as possible undefined to avoid confusion with sub classes that don't use it directly.
+	private _version?: number;
 
 	/**
 	 * The version number used to track changes.
@@ -30,7 +32,7 @@ export default abstract class IterableCollectionBase<T>
 	 */
 	get version (): number
 	{
-		return this._version;
+		return this._version || 0 | 0;
 	}
 
 	/**
@@ -65,6 +67,7 @@ export default abstract class IterableCollectionBase<T>
 	 */
 	incrementVersion (): number
 	{
-		return ++this._version;
+		if(this._version) return ++this._version;
+		return this._version = 1 | 0;
 	}
 }

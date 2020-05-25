@@ -15,14 +15,13 @@ export default class IterableCollectionBase extends ReadOnlyIterableCollectionBa
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     constructor() {
         super();
-        this._version = 0; // Provides an easy means of tracking changes and invalidating enumerables.
     }
     /**
      * The version number used to track changes.
      * @returns {number}
      */
     get version() {
-        return this._version;
+        return this._version || 0 | 0;
     }
     /**
      * Throws if the provided version does not match the current one.
@@ -50,7 +49,9 @@ export default class IterableCollectionBase extends ReadOnlyIterableCollectionBa
      * @return {number} The new version.
      */
     incrementVersion() {
-        return ++this._version;
+        if (this._version)
+            return ++this._version;
+        return this._version = 1 | 0;
     }
 }
 //# sourceMappingURL=IterableCollectionBase.js.map

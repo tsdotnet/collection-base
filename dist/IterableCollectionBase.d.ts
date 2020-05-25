@@ -12,7 +12,7 @@ import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase';
  */
 export default abstract class IterableCollectionBase<T> extends ReadOnlyIterableCollectionBase<T> {
     protected constructor();
-    private _version;
+    private _version?;
     /**
      * The version number used to track changes.
      * @returns {number}
