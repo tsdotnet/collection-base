@@ -32,7 +32,7 @@ class IterableCollectionBase extends ReadOnlyIterableCollectionBase_1.default {
      * @returns {boolean}
      */
     assertVersion(version) {
-        if (version !== this._version)
+        if (version !== this.version)
             throw new InvalidOperationException_1.default('Version mismatch. The collection was modified.');
         return true;
     }

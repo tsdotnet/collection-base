@@ -29,7 +29,7 @@ export default class IterableCollectionBase extends ReadOnlyIterableCollectionBa
      * @returns {boolean}
      */
     assertVersion(version) {
-        if (version !== this._version)
+        if (version !== this.version)
             throw new InvalidOperationException('Version mismatch. The collection was modified.');
         return true;
     }
