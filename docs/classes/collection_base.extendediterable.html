@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @tsdotnet/collection-base - v2.0.6">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -49,7 +50,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../index.html">Globals</a>
+					<a href="../index.html">@tsdotnet/collection-base - v2.0.6</a>
 				</li>
 				<li>
 					<a href="../modules/collection_base.html">collection-base</a>
@@ -84,19 +85,13 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="collection_base.readonlyiterablecollectionbase.html" class="tsd-signature-type">ReadOnlyIterableCollectionBase</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="collection_base.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">ExtendedIterable</span>
 							</li>
 						</ul>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -106,7 +101,7 @@
 						<section class="tsd-index-section tsd-is-private-protected">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="collection_base.extendediterable.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-protected"><a href="collection_base.extendediterable.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -117,7 +112,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="collection_base.extendediterable.html#copyto" class="tsd-kind-icon">copy<wbr>To</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="collection_base.extendediterable.html#filter" class="tsd-kind-icon">filter</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="collection_base.extendediterable.html#getcount" class="tsd-kind-icon">get<wbr>Count</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="collection_base.extendediterable.html#map" class="tsd-kind-icon">map</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="collection_base.extendediterable.html#map" class="tsd-kind-icon">map</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="collection_base.extendediterable.html#reduce" class="tsd-kind-icon">reduce</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="collection_base.extendediterable.html#toarray" class="tsd-kind-icon">to<wbr>Array</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="collection_base.extendediterable.html#create" class="tsd-kind-icon">create</a></li>
@@ -128,27 +123,33 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-protected">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Extended<wbr>Iterable<span class="tsd-signature-symbol">(</span>_source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Extended<wbr>Iterable&lt;T&gt;<span class="tsd-signature-symbol">(</span>_source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#constructor">constructor</a></p>
+								<p>Overrides <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L149">ReadOnlyIterableCollectionBase.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L149">ReadOnlyIterableCollectionBase.ts:149</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>_source: <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -159,17 +160,17 @@
 					<a name="_symbol_iterator_" class="tsd-anchor"></a>
 					<h3>[<wbr>Symbol.iterator]</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">[<wbr>Symbol.iterator]<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">[<wbr>Symbol.iterator]<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.iterablebase.html">IterableBase</a>.<a href="collection_base.iterablebase.html#_symbol_iterator_">[Symbol.iterator]</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#_symbol_iterator_">[Symbol.iterator]</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/IterableBase.ts#L28">IterableBase.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/IterableBase.ts#L28">IterableBase.ts:28</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -177,17 +178,17 @@
 					<a name="_getiterator" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _get<wbr>Iterator</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_get<wbr>Iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides IterableBase._getIterator</p>
+								<p>Overrides ReadOnlyIterableCollectionBase._getIterator</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L165">ReadOnlyIterableCollectionBase.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L165">ReadOnlyIterableCollectionBase.ts:165</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -200,9 +201,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#copyto">copyTo</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#copyto">copyTo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L117">ReadOnlyIterableCollectionBase.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L117">ReadOnlyIterableCollectionBase.ts:117</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -213,7 +214,7 @@
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>TTarget<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayLikeWritable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									<h4>TTarget<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayLikeWritable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TTarget</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -222,7 +223,7 @@
 									<h5>target: <span class="tsd-signature-type">TTarget</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> index: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<h5>index: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TTarget</span></h4>
@@ -233,14 +234,14 @@
 					<a name="filter" class="tsd-anchor"></a>
 					<h3>filter</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PredicateWithIndex</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PredicateWithIndex</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#filter">filter</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#filter">filter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L37">ReadOnlyIterableCollectionBase.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L37">ReadOnlyIterableCollectionBase.ts:37</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -254,7 +255,7 @@
 									<h5>predicate: <span class="tsd-signature-type">PredicateWithIndex</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -267,9 +268,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#getcount">getCount</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#getcount">getCount</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L135">ReadOnlyIterableCollectionBase.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L135">ReadOnlyIterableCollectionBase.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -281,19 +282,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 					<a name="map" class="tsd-anchor"></a>
 					<h3>map</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">map&lt;TResult&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SelectorWithIndex</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">map&lt;TResult&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SelectorWithIndex</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#map">map</a></p>
-								<p>Overrides <a href="collection_base.iterablebase.html">IterableBase</a>.<a href="collection_base.iterablebase.html#map">map</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#map">map</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L55">ReadOnlyIterableCollectionBase.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L55">ReadOnlyIterableCollectionBase.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,7 +313,7 @@
 									<h5>selector: <span class="tsd-signature-type">SelectorWithIndex</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -327,9 +327,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#reduce">reduce</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#reduce">reduce</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L69">ReadOnlyIterableCollectionBase.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L69">ReadOnlyIterableCollectionBase.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -383,9 +383,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#reduce">reduce</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#reduce">reduce</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L78">ReadOnlyIterableCollectionBase.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L78">ReadOnlyIterableCollectionBase.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -434,11 +434,6 @@
 								</li>
 								<li>
 									<h5>initialValue: <span class="tsd-signature-type">U</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Optional initial value to begin with.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">U</span></h4>
@@ -454,9 +449,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="collection_base.readonlyiterablecollectionbase.html">ReadOnlyIterableCollectionBase</a>.<a href="collection_base.readonlyiterablecollectionbase.html#toarray">toArray</a></p>
+								<p>Inherited from <a href="collection_base.default.html">default</a>.<a href="collection_base.default.html#toarray">toArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L126">ReadOnlyIterableCollectionBase.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L126">ReadOnlyIterableCollectionBase.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -472,13 +467,13 @@
 					<a name="create" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">create&lt;T&gt;<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create&lt;T&gt;<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/9e4b5e7/src/ReadOnlyIterableCollectionBase.ts#L160">ReadOnlyIterableCollectionBase.ts:160</a></li>
+									<li>Defined in <a href="https://github.com/tsdotnet/collection-base/blob/ac681ab/src/ReadOnlyIterableCollectionBase.ts#L160">ReadOnlyIterableCollectionBase.ts:160</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -498,7 +493,7 @@
 									<h5>source: <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="collection_base.extendediterable.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendedIterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -507,25 +502,55 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
 					</li>
 					<li class="current tsd-kind-module">
+						<a href="../modules/collection_base.html">collection-<wbr>base</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/collection_base.html">collection-<wbr>base</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="collection_base.collectionbase.html" class="tsd-kind-icon">Collection<wbr>Base</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="collection_base.extendediterable.html" class="tsd-kind-icon">Extended<wbr>Iterable</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-protected">
 								<a href="collection_base.extendediterable.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -543,7 +568,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="collection_base.extendediterable.html#getcount" class="tsd-kind-icon">get<wbr>Count</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
 								<a href="collection_base.extendediterable.html#map" class="tsd-kind-icon">map</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
@@ -560,37 +585,7 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="collection_base.iterablebase.html" class="tsd-kind-icon">Iterable<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="collection_base.iterablecollectionbase.html" class="tsd-kind-icon">Iterable<wbr>Collection<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="collection_base.readonlycollectionbase.html" class="tsd-kind-icon">Read<wbr>Only<wbr>Collection<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="collection_base.readonlyiterablecollectionbase.html" class="tsd-kind-icon">Read<wbr>Only<wbr>Iterable<wbr>Collection<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/collection_base.collection.html" class="tsd-kind-icon">Collection</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/collection_base.indexedcollection.html" class="tsd-kind-icon">Indexed<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/collection_base.readonlycollection.html" class="tsd-kind-icon">Read<wbr>Only<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/collection_base.readonlylist.html" class="tsd-kind-icon">Read<wbr>Only<wbr>List</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../modules/collection_base.html#arraylikeiterable" class="tsd-kind-icon">array<wbr>Like<wbr>Iterable</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../modules/collection_base.html#copyiterableto" class="tsd-kind-icon">copy<wbr>Iterable<wbr>To</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../modules/collection_base.html#indexiterable" class="tsd-kind-icon">index<wbr>Iterable</a>
+						<a href="collection_base.default.html" class="tsd-kind-icon">default</a>
 					</li>
 				</ul>
 			</nav>
@@ -624,6 +619,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
