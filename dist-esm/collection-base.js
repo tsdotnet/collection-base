@@ -1,9 +1,6 @@
 /**
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
- * @packageDocumentation
- * @module collection-base
- * @ignore
  */
 import arrayLikeIterable from './arrayLikeIterable';
 import CollectionBase from './CollectionBase';

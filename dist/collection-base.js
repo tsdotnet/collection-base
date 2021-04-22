@@ -2,9 +2,6 @@
 /**
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
- * @packageDocumentation
- * @module collection-base
- * @ignore
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CollectionBase = exports.ReadOnlyIterableCollectionBase = exports.ReadOnlyCollectionBase = exports.ExtendedIterable = exports.IterableCollectionBase = exports.IterableBase = exports.indexIterable = exports.arrayLikeIterable = exports.copyIterableTo = void 0;
