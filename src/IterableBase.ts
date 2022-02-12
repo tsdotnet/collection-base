@@ -17,7 +17,7 @@ import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullExcepti
  * This class is provided as a base for implementing any iterable including endless ones.
  */
 export default abstract class IterableBase<T>
-	implements Iterable<T>
+implements Iterable<T>
 {
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	protected constructor () { /* make protected */ }

@@ -6,10 +6,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExtendedIterable = void 0;
 const tslib_1 = require("tslib");
-const ArgumentNullException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/ArgumentNullException"));
-const InvalidOperationException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/InvalidOperationException"));
-const copyIterableTo_1 = tslib_1.__importDefault(require("./copyIterableTo"));
-const IterableBase_1 = tslib_1.__importDefault(require("./IterableBase"));
+const ArgumentNullException_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/exceptions/dist/ArgumentNullException"));
+const InvalidOperationException_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/exceptions/dist/InvalidOperationException"));
+const copyIterableTo_1 = (0, tslib_1.__importDefault)(require("./copyIterableTo"));
+const IterableBase_1 = (0, tslib_1.__importDefault)(require("./IterableBase"));
 /**
  * Base class for implementing finite read-only iterables.
  */
@@ -83,7 +83,7 @@ class ReadOnlyIterableCollectionBase extends IterableBase_1.default {
      * @returns {TTarget}
      */
     copyTo(target, index = 0) {
-        return copyIterableTo_1.default(this, target, index);
+        return (0, copyIterableTo_1.default)(this, target, index);
     }
     /**
      * Creates a copy of the contents as an array.
