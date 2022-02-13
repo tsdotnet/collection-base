@@ -8,4 +8,4 @@
 
 ## Docs
 
-[tsdotnet.github.io/collection-base](https://tsdotnet.github.io/collection-base/modules/collection_base.html)
+[tsdotnet.github.io/collection-base](https://tsdotnet.github.io/collection-base/)
