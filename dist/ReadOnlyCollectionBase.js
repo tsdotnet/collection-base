@@ -5,8 +5,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const areEqual_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/compare/dist/areEqual"));
-const IterableCollectionBase_1 = (0, tslib_1.__importDefault)(require("./IterableCollectionBase"));
+const areEqual_1 = tslib_1.__importDefault(require("@tsdotnet/compare/dist/areEqual"));
+const IterableCollectionBase_1 = tslib_1.__importDefault(require("./IterableCollectionBase"));
 /**
  * Base class for implementing an internally modifiable, eternally read-only collection.
  */
