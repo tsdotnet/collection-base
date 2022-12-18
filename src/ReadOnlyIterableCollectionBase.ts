@@ -99,7 +99,7 @@ export default abstract class ReadOnlyIterableCollectionBase<T>
 		}
 		else
 		{
-			let previous = initialValue;
+			let previous: any = initialValue;
 			for(const current of this) previous = reducer(previous, current, i++);
 			return previous;
 		}
