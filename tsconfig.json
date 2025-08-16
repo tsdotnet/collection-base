@@ -19,6 +19,7 @@
     "src/**/*"
   ],
   "exclude": [
+    "archive/**/*",
     "tests/**/*",
     "dist/**/*",
     "node_modules"
