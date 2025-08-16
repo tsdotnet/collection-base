@@ -8,7 +8,9 @@
     ".": {
       "import": "./dist/esm/collection-base.js",
       "require": "./dist/cjs/collection-base.js",
-      "types": "./dist/collection-base.d.ts"
+      "umd": "./dist/umd/collection-base.js",
+      "types": "./dist/collection-base.d.ts",
+      "default": "./dist/cjs/collection-base.js"
     }
   },
   "types": "dist/collection-base.d.ts",
