@@ -5,7 +5,7 @@
  */
 
 import {ArrayLikeWritable} from '@tsdotnet/common-interfaces';
-import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
+import {ArgumentNullException} from '@tsdotnet/exceptions';
 
 /**
  * Copies all values to a numerically indexable object.

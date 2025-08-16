@@ -4,8 +4,7 @@
  * @license MIT
  */
 
-import areEqual from '@tsdotnet/compare/dist/areEqual';
-import {EqualityComparison} from '@tsdotnet/compare/dist/Comparable';
+import {areEqual, EqualityComparison} from '@tsdotnet/compare';
 import IterableCollectionBase from './IterableCollectionBase';
 import ReadOnlyCollection from './ReadOnlyCollection';
 

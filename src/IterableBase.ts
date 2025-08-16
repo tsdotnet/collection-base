@@ -5,7 +5,7 @@
  */
 
 import {SelectorWithIndex} from '@tsdotnet/common-interfaces';
-import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
+import {ArgumentNullException} from '@tsdotnet/exceptions';
 
 /*
  * NOTE: Care should be taken not to introduce methods here that would cause an iterable to never complete.
@@ -19,7 +19,6 @@ import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullExcepti
 export default abstract class IterableBase<T>
 implements Iterable<T>
 {
-	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	protected constructor () { /* make protected */ }
 
 	[Symbol.iterator] (): Iterator<T>

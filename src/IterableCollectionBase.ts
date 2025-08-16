@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
+import {InvalidOperationException} from '@tsdotnet/exceptions';
 import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase';
 
 /**
@@ -13,7 +13,6 @@ import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase';
 export default abstract class IterableCollectionBase<T>
 	extends ReadOnlyIterableCollectionBase<T>
 {
-	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	protected constructor ()
 	{
 		super();

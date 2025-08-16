@@ -18,4 +18,5 @@ export default interface IndexedCollection<T>
 	insert (index: number, value: T): void;
 
 	removeAt (index: number): boolean;
+	// eslint-disable-next-line semi
 }

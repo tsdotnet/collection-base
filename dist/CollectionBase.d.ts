@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-import { EqualityComparison } from '@tsdotnet/compare/dist/Comparable';
+import { EqualityComparison } from '@tsdotnet/compare';
 import Collection from './Collection';
 import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
 /**

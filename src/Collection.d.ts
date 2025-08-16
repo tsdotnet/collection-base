@@ -18,4 +18,5 @@ export default interface Collection<T>
 
 	remove (entry: T, max?: number): number;  // Number of times removed.
 	clear (): number;
+	// eslint-disable-next-line semi
 }

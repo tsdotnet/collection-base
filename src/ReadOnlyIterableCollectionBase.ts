@@ -9,8 +9,7 @@ import {
 	PredicateWithIndex,
 	SelectorWithIndex
 } from '@tsdotnet/common-interfaces';
-import ArgumentNullException from '@tsdotnet/exceptions/dist/ArgumentNullException';
-import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
+import {ArgumentNullException, InvalidOperationException} from '@tsdotnet/exceptions';
 import copyIterableTo from './copyIterableTo';
 import IterableBase from './IterableBase';
 
@@ -20,7 +19,6 @@ import IterableBase from './IterableBase';
 export default abstract class ReadOnlyIterableCollectionBase<T>
 	extends IterableBase<T>
 {
-	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	protected constructor ()
 	{
 		super();

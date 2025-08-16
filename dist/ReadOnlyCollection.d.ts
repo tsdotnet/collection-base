@@ -15,4 +15,5 @@ export default interface ReadOnlyCollection<T>
 	count: number;
 
 	contains (entry: T): boolean;
+	// eslint-disable-next-line semi
 }

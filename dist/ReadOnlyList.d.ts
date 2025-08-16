@@ -12,4 +12,5 @@ export default interface ReadOnlyList<T>
 	get (index: number): T;
 
 	indexOf (item: T): number;
+	// eslint-disable-next-line semi
 }
