@@ -18,6 +18,7 @@ export default function indexIterable<T> (source: ArrayLike<T>): Iterable<T> {
 			{
 				for(let i = 0; i<len; i++)
 				{
+					//@ts-expect-error this doesn't break type assertions but still needs to iterate an undefined if it occurs.
 					yield source[i];
 				}
 			}

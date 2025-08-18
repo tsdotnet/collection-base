@@ -1,22 +1,15 @@
+import { ArgumentNullException, InvalidOperationException } from '@tsdotnet/exceptions';
+import copyIterableTo from './copyIterableTo.js';
+import IterableBase from './IterableBase.js';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-import { ArgumentNullException, InvalidOperationException } from '@tsdotnet/exceptions';
-import copyIterableTo from './copyIterableTo';
-import IterableBase from './IterableBase';
-/**
- * Base class for implementing finite read-only iterables.
- */
-export default class ReadOnlyIterableCollectionBase extends IterableBase {
+class ReadOnlyIterableCollectionBase extends IterableBase {
     constructor() {
         super();
     }
-    /**
-     * Returns an iterable filtered by the provided predicate.
-     * @param {PredicateWithIndex<T>} predicate
-     * @return {Iterable<T>}
-     */
     filter(predicate) {
         if (!predicate)
             throw new ArgumentNullException('predicate');
@@ -30,25 +23,11 @@ export default class ReadOnlyIterableCollectionBase extends IterableBase {
             }
         });
     }
-    /**
-     * Returns an iterable mapped by the provided selector.
-     * @param {SelectorWithIndex<T, TResult>} selector
-     * @return {Iterable<TResult>}
-     */
     map(selector) {
         if (!selector)
             throw new ArgumentNullException('selector');
         return ExtendedIterable.create(super.map(selector));
     }
-    // noinspection DuplicatedCode
-    /**
-     * Applies a reducer function to all the elements in this sequence.
-     * The specified `initialValue` is used as the initial accumulator value, and the specified function is used to select the result value.
-     * If no `initialValue` is specified, the first entry in the sequence is used.
-     * @param {(previous: U, current: T, index: number) => U} reducer
-     * @param {U} initialValue Optional initial value to begin with.
-     * @return {U}
-     */
     reduce(reducer, initialValue) {
         if (!reducer)
             throw new ArgumentNullException('reducer');
@@ -70,48 +49,25 @@ export default class ReadOnlyIterableCollectionBase extends IterableBase {
             return previous;
         }
     }
-    /**
-     * Copies all values to a numerically indexable object.
-     * @param {TTarget} target
-     * @param {number} index
-     * @returns {TTarget}
-     */
     copyTo(target, index = 0) {
         return copyIterableTo(this, target, index);
     }
-    /**
-     * Creates a copy of the contents as an array.
-     * @returns {[]}
-     */
     toArray() {
         return this.copyTo([]);
     }
-    /**
-     * Returns the number of items contained in the collection by iterating the contents.
-     * @returns {number}
-     */
     getCount() {
         let count = 0;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         for (const _ of this)
             count++;
         return count;
     }
 }
-/**
- * Extends an iterable with methods like filter, map, and reduce.
- */
-export class ExtendedIterable extends ReadOnlyIterableCollectionBase {
+class ExtendedIterable extends ReadOnlyIterableCollectionBase {
     _source;
     constructor(_source) {
         super();
         this._source = _source;
     }
-    /**
-     * Creates an ExtendedIterable wrapper for the provided source.
-     * @param {Iterable<T>} source
-     * @return {ExtendedIterable<T>}
-     */
     static create(source) {
         return new ExtendedIterable(source);
     }
@@ -119,4 +75,6 @@ export class ExtendedIterable extends ReadOnlyIterableCollectionBase {
         return this._source[Symbol.iterator]();
     }
 }
+
+export { ExtendedIterable, ReadOnlyIterableCollectionBase as default };
 //# sourceMappingURL=ReadOnlyIterableCollectionBase.js.map

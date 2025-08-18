@@ -5,11 +5,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = indexIterable;
-/**
- * Returns an iterable that iterates an `ArrayLike` object by index.
- * @param {ArrayLike<T>} source
- * @return {Iterable<T>}
- */
 function indexIterable(source) {
     return {
         *[Symbol.iterator]() {

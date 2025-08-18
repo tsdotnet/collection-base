@@ -1,14 +1,9 @@
-/**
- * @author electricessence / https://github.com/electricessence/
- * @license MIT
- */
-import arrayLikeIterable from './arrayLikeIterable';
-import CollectionBase from './CollectionBase';
-import copyIterableTo from './copyIterableTo';
-import indexIterable from './indexIterable';
-import IterableBase from './IterableBase';
-import IterableCollectionBase from './IterableCollectionBase';
-import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
-import ReadOnlyIterableCollectionBase, { ExtendedIterable } from './ReadOnlyIterableCollectionBase';
-export { copyIterableTo, arrayLikeIterable, indexIterable, IterableBase, IterableCollectionBase, ExtendedIterable, ReadOnlyCollectionBase, ReadOnlyIterableCollectionBase, CollectionBase };
+export { default as arrayLikeIterable } from './arrayLikeIterable.js';
+export { default as CollectionBase } from './CollectionBase.js';
+export { default as copyIterableTo } from './copyIterableTo.js';
+export { default as indexIterable } from './indexIterable.js';
+export { default as IterableBase } from './IterableBase.js';
+export { default as IterableCollectionBase } from './IterableCollectionBase.js';
+export { default as ReadOnlyCollectionBase } from './ReadOnlyCollectionBase.js';
+export { ExtendedIterable, default as ReadOnlyIterableCollectionBase } from './ReadOnlyIterableCollectionBase.js';
 //# sourceMappingURL=collection-base.js.map

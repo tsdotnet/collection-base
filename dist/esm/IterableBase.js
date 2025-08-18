@@ -1,26 +1,14 @@
+import { ArgumentNullException } from '@tsdotnet/exceptions';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-import { ArgumentNullException } from '@tsdotnet/exceptions';
-/*
- * NOTE: Care should be taken not to introduce methods here that would cause an iterable to never complete.
- * A 'filter' method for example could perpetually loop with a predicate that never returns true.
- */
-/**
- * Some iterables/generators can be infinite.
- * This class is provided as a base for implementing any iterable including endless ones.
- */
-export default class IterableBase {
+class IterableBase {
     constructor() { }
     [Symbol.iterator]() {
         return this._getIterator();
     }
-    /**
-     * Returns an iterable mapped by the provided selector.
-     * @param {SelectorWithIndex<T, TResult>} selector
-     * @return {Iterable<TResult>}
-     */
     map(selector) {
         if (!selector)
             throw new ArgumentNullException('selector');
@@ -34,4 +22,6 @@ export default class IterableBase {
         };
     }
 }
+
+export { IterableBase as default };
 //# sourceMappingURL=IterableBase.js.map
