@@ -5,7 +5,7 @@
  */
 
 import {InvalidOperationException} from '@tsdotnet/exceptions';
-import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase';
+import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase.js';
 
 /**
  * Base class for implementing an iterable (finite) collection.

@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import indexIterable from './indexIterable';
+import indexIterable from './indexIterable.js';
 
 /**
  * Ensures an iterable from an `ArrayLike` object.

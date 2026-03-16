@@ -3,8 +3,8 @@
  * @license MIT
  */
 import { EqualityComparison } from '@tsdotnet/compare';
-import Collection from './Collection';
-import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
+import Collection from './Collection.js';
+import ReadOnlyCollectionBase from './ReadOnlyCollectionBase.js';
 export default abstract class CollectionBase<T> extends ReadOnlyCollectionBase<T> implements Collection<T> {
     private _count;
     protected constructor(equalityComparer?: EqualityComparison<T>);

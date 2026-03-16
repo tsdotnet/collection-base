@@ -7,9 +7,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExtendedIterable = void 0;
 const tslib_1 = require("tslib");
 const exceptions_1 = require("@tsdotnet/exceptions");
-const copyIterableTo_1 = tslib_1.__importDefault(require("./copyIterableTo"));
-const IterableBase_1 = tslib_1.__importDefault(require("./IterableBase"));
-class ReadOnlyIterableCollectionBase extends IterableBase_1.default {
+const copyIterableTo_js_1 = tslib_1.__importDefault(require("./copyIterableTo.js"));
+const IterableBase_js_1 = tslib_1.__importDefault(require("./IterableBase.js"));
+class ReadOnlyIterableCollectionBase extends IterableBase_js_1.default {
     constructor() {
         super();
     }
@@ -53,7 +53,7 @@ class ReadOnlyIterableCollectionBase extends IterableBase_1.default {
         }
     }
     copyTo(target, index = 0) {
-        return (0, copyIterableTo_1.default)(this, target, index);
+        return (0, copyIterableTo_js_1.default)(this, target, index);
     }
     toArray() {
         return this.copyTo([]);

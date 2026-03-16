@@ -3,7 +3,7 @@
  * @license MIT
  */
 import { ArrayLikeWritable, PredicateWithIndex, SelectorWithIndex } from '@tsdotnet/common-interfaces';
-import IterableBase from './IterableBase';
+import IterableBase from './IterableBase.js';
 export default abstract class ReadOnlyIterableCollectionBase<T> extends IterableBase<T> {
     protected constructor();
     filter(predicate: PredicateWithIndex<T>): ExtendedIterable<T>;

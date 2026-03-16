@@ -5,7 +5,7 @@
 
 import {afterEach, beforeEach, describe, expect, it} from 'vitest';
 import {areEqual} from '@tsdotnet/compare';
-import CollectionBase from '../src/CollectionBase';
+import CollectionBase from '../src/CollectionBase.js';
 
 // Concrete implementation of CollectionBase for testing
 class TestCollection<T> extends CollectionBase<T> {

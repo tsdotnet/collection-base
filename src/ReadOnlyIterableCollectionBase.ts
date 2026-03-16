@@ -10,8 +10,8 @@ import {
 	SelectorWithIndex
 } from '@tsdotnet/common-interfaces';
 import {ArgumentNullException, InvalidOperationException} from '@tsdotnet/exceptions';
-import copyIterableTo from './copyIterableTo';
-import IterableBase from './IterableBase';
+import copyIterableTo from './copyIterableTo.js';
+import IterableBase from './IterableBase.js';
 
 /**
  * Base class for implementing finite read-only iterables.

@@ -2,7 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase';
+import ReadOnlyIterableCollectionBase from './ReadOnlyIterableCollectionBase.js';
 export default abstract class IterableCollectionBase<T> extends ReadOnlyIterableCollectionBase<T> {
     protected constructor();
     private _version?;

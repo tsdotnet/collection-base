@@ -4,7 +4,7 @@
  */
 
 import {beforeEach, describe, expect, it} from 'vitest';
-import ReadOnlyIterableCollectionBase, {ExtendedIterable} from '../src/ReadOnlyIterableCollectionBase';
+import ReadOnlyIterableCollectionBase, {ExtendedIterable} from '../src/ReadOnlyIterableCollectionBase.js';
 import {ArgumentNullException, InvalidOperationException} from '@tsdotnet/exceptions';
 
 // Concrete implementation for testing

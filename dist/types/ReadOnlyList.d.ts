@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import ReadOnlyCollection from './ReadOnlyCollection';
+import ReadOnlyCollection from './ReadOnlyCollection.js';
 
 export default interface ReadOnlyList<T>
 	extends ReadOnlyCollection<T>

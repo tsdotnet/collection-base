@@ -4,7 +4,7 @@
  */
 
 import {describe, expect, it} from 'vitest';
-import indexIterable from '../src/indexIterable';
+import indexIterable from '../src/indexIterable.js';
 
 describe('indexIterable', () => {
 	describe('basic functionality', () => {

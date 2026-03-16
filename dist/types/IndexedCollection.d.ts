@@ -1,11 +1,11 @@
-﻿
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
 
-import Collection from './Collection';
-import ReadOnlyList from './ReadOnlyList';
+import Collection from './Collection.js';
+import ReadOnlyList from './ReadOnlyList.js';
 
 /**
  * Interface for implementing an indexable collection.

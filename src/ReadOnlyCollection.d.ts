@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import IterableCollectionBase from './IterableCollectionBase';
+import IterableCollectionBase from './IterableCollectionBase.js';
 
 /**
  * Interface for implementing a finite read-only collection.

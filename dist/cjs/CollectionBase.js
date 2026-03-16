@@ -6,8 +6,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const compare_1 = require("@tsdotnet/compare");
-const ReadOnlyCollectionBase_1 = tslib_1.__importDefault(require("./ReadOnlyCollectionBase"));
-class CollectionBase extends ReadOnlyCollectionBase_1.default {
+const ReadOnlyCollectionBase_js_1 = tslib_1.__importDefault(require("./ReadOnlyCollectionBase.js"));
+class CollectionBase extends ReadOnlyCollectionBase_js_1.default {
     constructor(equalityComparer = compare_1.areEqual) {
         super(equalityComparer);
         this._count = 0;

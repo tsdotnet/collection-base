@@ -3,8 +3,8 @@
  * @license MIT
  */
 import { EqualityComparison } from '@tsdotnet/compare';
-import IterableCollectionBase from './IterableCollectionBase';
-import ReadOnlyCollection from './ReadOnlyCollection';
+import IterableCollectionBase from './IterableCollectionBase.js';
+import ReadOnlyCollection from './ReadOnlyCollection.js';
 export default abstract class ReadOnlyCollectionBase<T> extends IterableCollectionBase<T> implements ReadOnlyCollection<T> {
     protected _equalityComparer: EqualityComparison<T>;
     protected constructor(_equalityComparer?: EqualityComparison<T>);

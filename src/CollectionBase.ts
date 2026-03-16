@@ -5,8 +5,8 @@
  */
 
 import {areEqual, EqualityComparison} from '@tsdotnet/compare';
-import Collection from './Collection';
-import ReadOnlyCollectionBase from './ReadOnlyCollectionBase';
+import Collection from './Collection.js';
+import ReadOnlyCollectionBase from './ReadOnlyCollectionBase.js';
 
 /**
  * Base class for implementing an externally modifiable collection.

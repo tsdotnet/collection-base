@@ -4,7 +4,7 @@
  */
 
 import {describe, it, expect} from 'vitest';
-import IterableCollectionBase from '../src/IterableCollectionBase';
+import IterableCollectionBase from '../src/IterableCollectionBase.js';
 
 /**
  * Simple test implementation of IterableCollectionBase

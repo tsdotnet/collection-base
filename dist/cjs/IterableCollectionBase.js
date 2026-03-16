@@ -6,8 +6,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const exceptions_1 = require("@tsdotnet/exceptions");
-const ReadOnlyIterableCollectionBase_1 = tslib_1.__importDefault(require("./ReadOnlyIterableCollectionBase"));
-class IterableCollectionBase extends ReadOnlyIterableCollectionBase_1.default {
+const ReadOnlyIterableCollectionBase_js_1 = tslib_1.__importDefault(require("./ReadOnlyIterableCollectionBase.js"));
+class IterableCollectionBase extends ReadOnlyIterableCollectionBase_js_1.default {
     constructor() {
         super();
     }

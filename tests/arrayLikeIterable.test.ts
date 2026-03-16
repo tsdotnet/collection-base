@@ -4,7 +4,7 @@
  */
 
 import {describe, expect, it} from 'vitest';
-import arrayLikeIterable from '../src/arrayLikeIterable';
+import arrayLikeIterable from '../src/arrayLikeIterable.js';
 
 describe('arrayLikeIterable', () => {
 	describe('array inputs', () => {

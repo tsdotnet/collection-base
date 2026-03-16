@@ -4,7 +4,7 @@
  */
 
 import {describe, expect, it} from 'vitest';
-import copyIterableTo from '../src/copyIterableTo';
+import copyIterableTo from '../src/copyIterableTo.js';
 import {ArgumentNullException} from '@tsdotnet/exceptions';
 
 describe('copyIterableTo', () => {

@@ -1,10 +1,10 @@
-﻿
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
 
-import ReadOnlyCollection from './ReadOnlyCollection';
+import ReadOnlyCollection from './ReadOnlyCollection.js';
 
 /**
  * Interface for implementing an externally modifiable collection.
