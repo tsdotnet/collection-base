@@ -1,4 +1,4 @@
-![@tsdotnet/collection-base: Build collections fast. Abstract bases with the plumbing done.](https://cdn.jsdelivr.net/gh/tsdotnet/collection-base@master/assets/banner.svg)
+<a href="https://tsdotnet.github.io/collection-base/"><img src="https://cdn.jsdelivr.net/gh/tsdotnet/collection-base@master/assets/banner.svg" alt="@tsdotnet/collection-base: Build collections fast. Abstract bases with the plumbing done."></a>
 
 [![npm version](https://img.shields.io/npm/v/@tsdotnet/collection-base.svg?style=flat-square)](https://www.npmjs.com/package/@tsdotnet/collection-base)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/tsdotnet/collection-base/blob/master/LICENSE)
